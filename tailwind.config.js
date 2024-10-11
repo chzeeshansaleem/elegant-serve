@@ -15,8 +15,15 @@ module.exports = {
         textSecondaryColor: "#d21257",
         blue: "#05799d"
       },
+      dropShadow: {
+        blue: '0 5px 20px rgba(5, 121, 157, 0.6)',
+        white: '0 5px 10px rgba(225, 225, 225, 0.6)'
+      },
+      boxShadow: {
+        white: '0 1px 10px rgba(225, 225, 225, 0.4)'
+      },
       fontFamily: {
-        sans: ['Gotham', 'sans-serif'], 
+        sans: ['Gotham', 'sans-serif'],
       },
       keyframes: {
         fadeInDown: {
