@@ -1,4 +1,3 @@
-import Headers from "../app/component/headers/Page";
 import Footer from "../app/component/footer/Page";
 import "./globals.css";
 import Head from "next/head";
