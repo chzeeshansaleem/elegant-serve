@@ -4,6 +4,5 @@ const nextConfig = {
    images: {
       unoptimized: true,
    },
-   distDir: 'out',
 }
 export default nextConfig;
