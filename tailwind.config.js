@@ -9,9 +9,10 @@ module.exports = {
     extend: {
       colors: {
         background: "#141414",
+        // background: "white",
         foreground: "#272727",
         buttonColor: "#0484ac",
-        textColor: "#b3b3b3",
+        textColor: "#141414",
         textSecondaryColor: "#d21257",
         blue: "#05799d"
       },

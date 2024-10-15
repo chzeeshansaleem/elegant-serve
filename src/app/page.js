@@ -1,9 +1,12 @@
 import { Montserrat } from "next/font/google";
 
+// Landing Page Sections 
 import Hero from "../app/sections/hero/Page";
 import Client from "../app/sections/clients/Page";
 import Services from "../app/sections/services/Page";
 import About from "../app/sections/about/Page";
+import Projects from "../app/sections/projects/page";
+import TestimonialCarousel from "@/app/sections/testimonials/page";
 
 const roboto = Montserrat({
   weight: "400",
@@ -17,7 +20,9 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
+      <Projects />
       <Client />
+      <TestimonialCarousel />
     </div>
   );
 }
