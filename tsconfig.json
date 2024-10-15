@@ -5,6 +5,11 @@
       "dom.iterable",
       "esnext"
     ],
+   "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }, 
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -27,7 +32,8 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.cjs"
+    "**/*.cjs",
+    "out/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

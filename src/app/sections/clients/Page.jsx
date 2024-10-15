@@ -14,14 +14,15 @@ import Client9 from "../../assets/log-9.png";
 import Client10 from "../../assets/log-10.png";
 import Client11 from "../../assets/log-12.png";
 
+import Heading from "../../component/main-heading/Page";
+
 const Page = () => {
    const clients = [Client1, Client2, Client3, Client4, Client5, Client6, Client7, Client8, Client9, Client10, Client11]; // List of client logos
 
    return (
-      <div className="py-20 bg-background">
+      <div className="py-28 bg-background">
          <div className='flex flex-col w-full items-center'>
-            <h1>Our Clients</h1>
-            <p className='h-1 bg-white w-20 text-center -mt-2'></p>
+            <Heading heading="Our Partners" />
          </div>
          <div className="relative mt-20">
             <Marquee speed={50} gradient={false}>
