@@ -3,13 +3,13 @@ import Logo from "../../assets/logo.png";
 import Image from 'next/image';
 import Link from 'next/link';
 import { CiMail } from "react-icons/ci";
-import { FaFacebook, FaPhoneAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 import Image1 from "../../assets/footer.avif"
 const Page = () => {
 
-   const headingStyle = `text-blue text-2xl uppercase font-medium tracking-[7px] font-gowun`;
-   const iconsStyle = 'text-blue text-3xl hover:scale-110 duration-700 hover:drop-shadow-blue  shadow-lg cursor-pointer'
+   const headingStyle = `
+   text-blue text-2xl uppercase font-medium tracking-[7px] font-gowun`
 
    const footerContent = {
       "Services": [
@@ -53,25 +53,11 @@ const Page = () => {
 
 
    return (
-      <div className={`relative w-full bottom-0 flex-grow `}>
-         <div style={{ backgroundImage: `url(${Image1})` }} className={`bg-foreground absolute w-full top-0 p-5 md:px-20 overflow-auto flex-1`}>
-            <div className="flex justify-between w-full flex-wrap space-y-5 border-b-[0.5px] py-10">
+      <div className={`relative flex-grow bg-url([${Image1}]) flex-grow`}>
+         <div className={`bg-foreground absolute w-full top-0 p-5 md:p-20 overflow-auto flex-1`}>
+            <div className="flex justify-between w-full flex-wrap space-y-5 border-b-[0.5px] pb-10">
                <div>
                   <Image src={Logo} alt="elegant serve" />
-                  <div>
-                     <div className="flex flex-col text-white mt-5 gap-3">
-                        <Link href={`mailto:${email}`} className="flex items-center text-white hover:text-blue duration-500">
-                           <CiMail />
-                           <span className="ml-2">{email}</span>
-                        </Link>
-
-                        <Link href={`tel:${phoneNumber}`} className="flex items-center text-white hover:text-blue duration-500">
-                           <FaPhoneAlt />
-                           <span className="ml-2">{phoneNumber}</span>
-                        </Link>
-                     </div>
-
-                  </div>
                </div>
                {
                   Object.entries(footerContent).map(([key, value], index) => (
@@ -100,17 +86,6 @@ const Page = () => {
                         <span className="ml-2">{phoneNumber}</span>
                      </Link>
                   </div>
-               </div>
-            </div>
-            <div className='flex justify-between pt-4'>
-               <div className='flex gap-7'>
-                  <FaFacebook className={iconsStyle} />
-                  <FaInstagram className={iconsStyle} />
-                  <FaLinkedin className={iconsStyle} />
-               </div>
-               <div className='text-white gap-8 text-xl flex'>
-                  <Link className='border-b-white hover:border-b' href={'/'}>Terms Of Use</Link>
-                  <Link className='border-b-white hover:border-b' href={'/'}>Privacy & Policies</Link>
                </div>
             </div>
          </div>

@@ -5,10 +5,9 @@ import Image from 'next/image';
 import { Squash as HamburgerSquash } from 'hamburger-react';
 import ProgressBar from "react-scroll-progress-bar";
 
+
 import Logo from "../../assets/logo.png";
-
 const Page = () => {
-
    const [scroll, setScroll] = useState(false);
    const [isOpen, setIsOpen] = useState(false)
 
@@ -17,7 +16,6 @@ const Page = () => {
          setScroll(window.scrollY > 40);
       });
    }, []);
-
 
    useEffect(() => {
       const handleScroll = () => {
@@ -54,19 +52,19 @@ const Page = () => {
    const menuOptions = [
       {
          name: "Services",
-         path: "/pages/service"
+         path: "/"
       }, {
          name: "Projects",
-         path: "/pages/projects"
+         path: "/"
       }, {
          name: "Partner",
-         path: "/pages/partners"
+         path: "/"
       }, {
          name: "About Us",
-         path: "/pages/about"
+         path: "/"
       }, {
          name: "Contact Us",
-         path: "/pages/contact"
+         path: "/"
       },
    ];
 
@@ -79,7 +77,7 @@ const Page = () => {
 
       <>
          <ProgressBar height="6" bgcolor="#05799d" duration="1" />
-         <div className={`${scroll ? "fixed top-0 w-full animate-fadeInDown  bg-foreground" : ""} flex justify-around px-10 h-28 items-center border-b-white/20 border-b-[0.1px]`
+         <div className={`${scroll ? "fixed top-0 w-full animate-fadeInDown  bg-foreground/90" : ""} flex justify-around px-10 h-28 items-center border-b-white/20 border-b-[0.1px]`
          }>
             <div>
                <Link href={'/'}><Image src={Logo} className='w-28 md:w-52' alt="ElegantServe" /></Link>
@@ -119,8 +117,7 @@ const Page = () => {
                   easing="ease-in"
                />
             </div>
-         </div >
-      </>
+         </div ></>
    )
 }
 
