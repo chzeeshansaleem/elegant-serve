@@ -4,22 +4,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { services } from "./constant";
 import Heading from "../../component/main-heading/Page";
 
-// Updated variants to include fade-in with opacity
 const leftSideVariants = {
-   hidden: { opacity: 0, x: -550 },
+   hidden: { opacity: 0, x: -150 },
    visible: { opacity: 1, x: 0 },
 };
 
 const rightSideVariants = {
-   hidden: { opacity: 0, x: 550 },
+   hidden: { opacity: 0, x: 150 },
    visible: { opacity: 1, x: 0 },
 };
 
 const Page = () => {
+   // Local state to track which service is expanded
    const [expandedService, setExpandedService] = useState(null);
 
    const toggleService = (id) => {
-      setExpandedService(expandedService === id ? null : id);
+      setExpandedService(expandedService === id ? null : id); // Toggle the service expansion
    };
 
    return (
@@ -29,12 +29,11 @@ const Page = () => {
             {services.map((service, index) => (
                <motion.div
                   key={service.id}
-                  className="flex flex-row items-start px-5 py-3 gap-5 border duration-1000 hover:scale-110 border-white/20 w-[600px] rounded-sm hover:shadow-white cursor-pointer group overflow-hidden"
+                  className="flex flex-row items-start px-5 py-3 gap-5 border duration-1000 hover:scale-110 border-white/20 w-[600px] rounded-sm  hover:shadow-white cursor-pointer group overflow-hidden"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  // Apply fade-in from left or right with opacity
                   variants={service.side === "left" ? leftSideVariants : rightSideVariants}
                >
                   <div>
@@ -52,7 +51,7 @@ const Page = () => {
                      <div className="relative">
                         <AnimatePresence initial={false}>
                            {expandedService === service.id ? (
-                              <motion.div
+                              <motion.p
                                  key="expanded"
                                  initial={{ height: 0, opacity: 0 }}
                                  animate={{ height: "auto", opacity: 1 }}
@@ -60,10 +59,10 @@ const Page = () => {
                                  transition={{ duration: 0.3 }}
                                  className="overflow-hidden"
                               >
-                                 <p>{service.description}</p>
-                              </motion.div>
+                                 {service.description}
+                              </motion.p>
                            ) : (
-                              <motion.div
+                              <motion.p
                                  key="collapsed"
                                  initial={{ height: 0, opacity: 0 }}
                                  animate={{ height: "auto", opacity: 1 }}
@@ -71,8 +70,8 @@ const Page = () => {
                                  transition={{ duration: 0.3 }}
                                  className="overflow-hidden"
                               >
-                                 <p>{service.description.substring(0, 150)}...</p>
-                              </motion.div>
+                                 {service.description.substring(0, 150)}...
+                              </motion.p>
                            )}
                         </AnimatePresence>
                         <button
@@ -83,8 +82,8 @@ const Page = () => {
                         </button>
                      </div>
                   </div>
-               </motion.div>
 
+               </motion.div>
             ))}
          </div>
       </div>
