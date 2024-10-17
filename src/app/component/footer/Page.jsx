@@ -87,20 +87,7 @@ const Page = () => {
                      </div>
                   ))
                }
-               <div>
-                  <h3 className={headingStyle}>Contact</h3>
-                  <div className="flex flex-col text-white mt-5 gap-3">
-                     <Link href={`mailto:${email}`} className="flex items-center text-white hover:text-blue duration-500">
-                        <CiMail />
-                        <span className="ml-2">{email}</span>
-                     </Link>
-
-                     <Link href={`tel:${phoneNumber}`} className="flex items-center text-white hover:text-blue duration-500">
-                        <FaPhoneAlt />
-                        <span className="ml-2">{phoneNumber}</span>
-                     </Link>
-                  </div>
-               </div>
+            
             </div>
             <div className='flex justify-between pt-4'>
                <div className='flex gap-7'>

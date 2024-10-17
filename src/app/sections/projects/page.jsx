@@ -1,7 +1,6 @@
 
 'use client'
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 import Heading from "@/app/component/main-heading/Page";
 import Image from 'next/image';
@@ -37,7 +36,7 @@ const Projects = () => {
             {categories.map(category => (
                <button
                   key={category}
-                  className={`px-4 py-2 rounded-md ${selectedCategory === category ? 'bg-blue-500 text-blue font-medium' : 'text-white tracking-wide'
+                  className={`px-4 py-2 rounded-md font-semibold ${selectedCategory === category ? 'bg-blue-500 text-blue font-medium' : 'text-textColor tracking-wide'
                      }`}
                   onClick={() => setSelectedCategory(category)}
                >
@@ -46,34 +45,28 @@ const Projects = () => {
             ))}
          </div>
 
-         <div className="w-full max-w-5xl mx-auto columns-1 p-5 pb-10 gap-10 sm:columns-2 lg:columns-3 xl:columns-2 flex-wrap">
-            <AnimatePresence>
-               {filteredProjects.map(project => (
-                  <motion.div
-                     key={project.id}
-                     className="relative group w-[300px] "
-                     initial={{ opacity: 0, scale: 0.8 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     exit={{ opacity: 0, scale: 0.8 }}
-                     transition={{ duration: 0.5 }}
-                  >
-                     <Image
-                        width={300}
-                        height={700}
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full object-cover mb-4 group-hover:scale-95 duration-1000 cursor-pointer"
-                     />
-                     <div className="absolute bottom-0 bg-background h-28  w-fit flex flex-col justify-center px-5">
-                        <h2 className="font-semibold text-blue uppercase tracking-widest text-2xl">{project.title}</h2>
-                        <p className="text-white text-lg tracking-wide">{project.category}</p>
-                     </div>
-                  </motion.div>
-               ))}
-            </AnimatePresence>
+         <div className="w-full max-w-5xl mx-auto columns-1 p-5 pb-10 gap-20 grid grid-cols-1 md:grid-cols-2 flex-wrap">
+            {filteredProjects.map(project => (
+               <div
+                  key={project.id}
+                  className="relative group w-[300px] h-96"
+               >
+                  <Image
+                     width={300}
+                     height={700}
+                     src={project.image}
+                     alt={project.title}
+                     className="w-full h-full object-cover mb-4 group-hover:scale-95 duration-1000 cursor-pointer"
+                  />
+                  <div className="absolute bottom-0 bg-[black] h-28  w-fit flex flex-col justify-center px-5">
+                     <h2 className="font-semibold text-blue uppercase tracking-widest text-2xl">{project.title}</h2>
+                     <p className="text-lightWhite font-semibold text-lg tracking-wide">{project.category}</p>
+                  </div>
+               </div>
+            ))}
          </div>
 
-      </div>
+      </div >
    );
 };
 

@@ -71,8 +71,8 @@ const Page = () => {
                   />
                </div>
                <div className='flex  flex-col md:flex-row gap-3 md:gap-10 mt-10 z-30'>
-                  <button className='bg-buttonColor hover:drop-shadow-blue text-white z-30 px-8 rounded-md hover:rounded-none duration-700 hover:scale-110 py-3 tracking-widest uppercase'>Learn More</button>
-                  <button className='text-white rounded-md uppercase tracking-widest border px-8 py-3 border-white hover:bg-white hover:text-black hover:scale-110 duration-700 hover:rounded-none drop-shadow-white'>Contact Us</button>
+                  <button className='bg-buttonColor hover:drop-shadow-blue text-white z-30 px-8 rounded-md hover:rounded-none duration-700 hover:scale-110 py-3 tracking-widest uppercase text-lg'>Learn More</button>
+                  <button className='text-white rounded-md uppercase tracking-widest border px-8 py-3 border-white hover:bg-white hover:text-black hover:scale-110 duration-700 hover:rounded-none drop-shadow-white  text-lg'>Contact Us</button>
                </div>
             </div>
          </div>
