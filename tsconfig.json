@@ -34,7 +34,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "out/types/**/*.ts"
-  ],
+, "src/app/component/map/map-config.jsx"  ],
   "exclude": [
     "node_modules"
   ]

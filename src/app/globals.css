@@ -82,7 +82,7 @@ body {
 }
 
 .swiper_container {
-  height: 52rem;
+  height: 42rem;
   padding: 2rem 0;
   position: relative;
 }
@@ -91,6 +91,8 @@ body {
   width: 37rem;
   height: 42rem;
   position: relative;
+  background-color: #f5f5f5;
+
   /* box-shadow: 0 10px 30px rgba(225, 225, 225, 0.2);
   transform: scale(1.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease; */
@@ -160,7 +162,6 @@ body {
 }
 
 .slider-controler .slider-arrow {
-  background: var(--white);
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;

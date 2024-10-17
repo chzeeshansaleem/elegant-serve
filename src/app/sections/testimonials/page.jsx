@@ -49,8 +49,7 @@ function Testimonial() {
                {
                   testimonials.map((testimonial, index) => (
                      <SwiperSlide key={index}>
-                        <div className="flex flex-col justify-center items-center gap-5 p-5 h-full text-white bg-foreground rounded-lg">
-                           <p className="text-2xl text-center">{testimonial.message}</p>
+                        <div className="flex flex-col justify-center items-center gap-5 p-5 h-full text-foreground font-semibold bg-background rounded-lg">
                            <div className='flex items-center gap-5'>
                               <Image
                                  width={50}
@@ -61,19 +60,20 @@ function Testimonial() {
                               />
                               <div className=''>
                                  <p className="text-blue-400 font-semibold mt-2 text-blue">{testimonial.name}</p>
-                                 <p className="text-gray-400">{testimonial.position}</p>
+                                 <p className="text-gray-700">{testimonial.position}</p>
                               </div>
                            </div>
+                           <p className="text-2xl text-center">{testimonial.message}</p>
                         </div>
                      </SwiperSlide>
                   ))
                }
 
                <div className="slider-controler">
-                  <div className="swiper-button-prev slider-arrow">
+                  <div className="swiper-button-prev slider-arrow bg-background">
                      <TbArrowBadgeLeftFilled className='text-blue' />
                   </div>
-                  <div className="swiper-button-next slider-arrow">
+                  <div className="swiper-button-next slider-arrow bg-background">
                      <TbArrowBadgeRightFilled className='text-blue' />
                   </div>
                </div>
