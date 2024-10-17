@@ -5,7 +5,7 @@ import Hero from "@/app/sections/hero/Page";
 import Client from "@/app/sections/clients/Page";
 import Services from "@/app/sections/services/Page";
 import About from "../app/sections/about/Page";
-import Projects from "@/app/sections/projects/page";
+import Projects from "@/app/sections/projects/Page";
 import TestimonialCarousel from "@/app/sections/testimonials/page";
 import Contact from "@/app/component/contact-form/page";
 const roboto = Montserrat({

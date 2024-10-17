@@ -1,18 +1,8 @@
-'use client';
-import React, { useState } from "react";
-import { services } from "./constant";
-import Heading from "../../component/main-heading/Page";
-
-// Updated variants to include fade-in with opacity
-const leftSideVariants = {
-   hidden: { opacity: 0, x: -550 },
-   visible: { opacity: 1, x: 0 },
-};
-
-const rightSideVariants = {
-   hidden: { opacity: 0, x: 550 },
-   visible: { opacity: 1, x: 0 },
-};
+'use client'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
+import { services } from './constant';
+import Heading from '../../component/main-heading/Page';
 
 const Page = () => {
    const [expandedService, setExpandedService] = useState(null);
@@ -25,15 +15,10 @@ const Page = () => {
       <div className="flex flex-col justify-center items-center w-full py-14 overflow-hidden">
          <Heading heading="Services" className="text-3xl" />
          <div className="flex flex-row justify-center flex-wrap gap-8 p-8 text-textColor w-full mt-10">
-            {services.map((service, index) => (
+            {services.map((service) => (
                <div
                   key={service.id}
-                  className="flex flex-row items-start px-5 py-5 gap-5 bg-background rounded-md border duration-1000 transition-all hover:scale-105 border-foreground/60 w-[450px]  hover:shadow-blue cursor-pointer group overflow-hidden"
-                  initial="hidden"
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  // Apply fade-in from left or right with opacity
-                  variants={service.side === "left" ? leftSideVariants : rightSideVariants}
+                  className="flex flex-row items-start px-5 py-5 gap-5 bg-background rounded-md border duration-1000 transition-all hover:scale-105 border-foreground/60 w-[450px] hover:shadow-blue cursor-pointer group overflow-hidden"
                >
                   <div>
                      <p className="flex items-center justify-center font-extralight rounded-full h-[60px] w-[60px] bg-foreground/70 text-2xl group-hover:drop-shadow-white duration-1000 text-white">
@@ -48,27 +33,30 @@ const Page = () => {
                         </p>
                      </div>
                      <div className="relative">
-
-                        <div
-                           key="collapsed"
-                           initial={{ height: 0, opacity: 0 }}
-                           animate={{ height: "auto", opacity: 1 }}
-                           exit={{ height: 0, opacity: 0 }}
-                           transition={{ duration: 0.3 }}
-                           className="overflow-hidden"
+                        <motion.div
+                           initial={false}
+                           animate={{
+                              height: expandedService === service.id ? 'auto' : '7rem',
+                              opacity: expandedService === service.id ? 1 : 0.8,
+                           }}
+                           transition={{ duration: 0.5 }}
+                           className="overflow-hidden transition-all ease-in-out"
                         >
-                           <p>{service.description.substring(0, 150)}...</p>
-                        </div>
+                           <p>
+                              {expandedService === service.id
+                                 ? service.description
+                                 : service.description.substring(0, 150) + '...'}
+                           </p>
+                        </motion.div>
                         <button
                            onClick={() => toggleService(service.id)}
-                           className="text-blue font-semibold text-lg hover:underline underline-offset-2 duration-800 mt-3"
+                           className="text-blue font-semibold text-lg hover:underline underline-offset-2 duration-300 mt-3"
                         >
-                           {expandedService === service.id ? "Show Less" : "Read More"}
+                           {expandedService === service.id ? 'Show Less' : 'Read More'}
                         </button>
                      </div>
                   </div>
                </div>
-
             ))}
          </div>
       </div>

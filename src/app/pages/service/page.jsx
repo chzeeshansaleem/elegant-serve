@@ -1,15 +1,15 @@
 import React from 'react'
 
-import HeroImage from "@/app/component/hero-image/page";
+import HeroImage from "@/app/component/hero-image/Page";
 import Service from "@/app/sections/services/Page";
 import Contact from "@/app/component/contact-form/page";
 import image from "@/app/assets/tumb-1_03.png";
-const page = () => {
+const Page = () => {
 
    return (
       <div>
          <div>
-            <HeroImage src={image} title={'Our Services'} />
+            <HeroImage src={image} title='Our Services' />
          </div>
          <div>
             <Service />
@@ -21,4 +21,4 @@ const page = () => {
    )
 }
 
-export default page
+export default Page

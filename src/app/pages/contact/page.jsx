@@ -1,10 +1,13 @@
-import React from 'react'
+'use client';
 
-// App sections imports
-import HeroImage from "../../component/hero-image/page";
-import ContactForm from "../../component/contact-form/page";
-import Map from "../../component/map/map-config";
+import dynamic from 'next/dynamic';
 import image from "../../assets/Call-Center-career.jpg";
+
+// Dynamically import the components to disable SSR
+const HeroImage = dynamic(() => import('../../component/hero-image/Page'), { ssr: false });
+const ContactForm = dynamic(() => import('../../component/contact-form/page'), { ssr: false });
+const Map = dynamic(() => import('../../component/map/map-config'), { ssr: false });
+
 const page = () => {
    return (
       <>
@@ -17,10 +20,8 @@ const page = () => {
          <div>
             <Map />
          </div>
-         <div>
-         </div>
       </>
-   )
+   );
 }
 
 export default page;

@@ -1,20 +1,9 @@
 'use client';
 import React from 'react';
 import Header from "../headers/Page";
+import { motion } from 'framer-motion'; // Import framer-motion
 
-// Styled-components and react-animations imports
-import styled, { keyframes } from 'styled-components';
-import { slideInUp } from 'react-animations';
-
-// Define the slide-up animation
-const slideUpAnimation = keyframes`${slideInUp}`;
-
-// Create a styled component with the animation
-const AnimatedTitle = styled.h1`
-  animation: 0.5s ${slideUpAnimation};
-`;
-
-const page = ({ src, title }) => {
+const Page = ({ src, title }) => {
    return (
       <>
          <div className='h-screen flex flex-col justify-center items-center w-full relative'
@@ -28,15 +17,22 @@ const page = ({ src, title }) => {
                <Header />
             </div>
             <div className='absolute bg-black/70 h-full w-full flex flex-col justify-center items-center'>
-               {/* Apply the animation to the title */}
-               <AnimatedTitle className='text-xl md:text-5xl font-semibold tracking-widest'>
+
+               {/* Title with animation */}
+               <motion.p
+                  initial={{ opacity: 0, y: 50 }} // Start off-screen (y: 50)
+                  animate={{ opacity: 1, y: 0 }} // Animate to the final position (y: 0)
+                  transition={{ duration: 1, ease: 'easeOut' }} // Smooth transition
+                  className='text-xl md:text-5xl text-white font-semibold tracking-widest'
+               >
                   {title}
-               </AnimatedTitle>
-               <p className='border border-b w-16 font text-center'></p>
+               </motion.p>
+
+               <p className='border border-b mt-5 w-16 font text-center'></p>
             </div>
          </div>
       </>
    );
 };
 
-export default page;
+export default Page;

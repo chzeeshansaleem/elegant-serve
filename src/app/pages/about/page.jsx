@@ -2,18 +2,18 @@ import React from 'react'
 import Image from 'next/image';
 // App imports
 import image from "@/app/assets/Call-Center-Agents-300x200.jpg";
-import HeroImage from "@/app/component/hero-image/page";
+import HeroImage from "@/app/component/hero-image/Page";
 import About from "@/app/sections/about/Page";
 import Contact from "@/app/component/contact-form/page";
 
 import { clients } from '@/app/constant/constant';
 
-const page = () => {
+const Page = () => {
 
    return (
       <div>
          <div>
-            <HeroImage src={image} title={"About US"} />
+            <HeroImage src={image} title="About US" />
          </div>
          <div>
             <About />
@@ -37,4 +37,4 @@ const page = () => {
    )
 }
 
-export default page;
+export default Page;

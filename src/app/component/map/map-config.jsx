@@ -1,8 +1,14 @@
 'use client';
 
-import { MapContainer, TileLayer, Marker, Circle } from 'react-leaflet';
+import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
+// Dynamically import MapContainer and other components from 'react-leaflet'
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
+const Circle = dynamic(() => import('react-leaflet').then(mod => mod.Circle), { ssr: false });
 
 // Fix marker icon issue by explicitly handling default icons in Next.js
 delete L.Icon.Default.prototype._getIconUrl;
@@ -17,21 +23,15 @@ const Map = () => {
   const radius = 1000; // Increase circle radius for better visibility
 
   return (
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: "400px", width: "100%" }}>
-      {/* Light-themed map tiles */}
+    <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '400px', width: '100%' }}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
-      {/* Marker with default Leaflet icon */}
       <Marker position={position} />
-
-      {/* Circle around marker */}
       <Circle center={position} radius={radius} color="#4285F4" />
     </MapContainer>
   );
-}
+};
 
 export default Map;
-
