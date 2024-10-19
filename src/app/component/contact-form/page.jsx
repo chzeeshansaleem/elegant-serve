@@ -33,6 +33,7 @@ const Page = ({ background }) => {
 
    return (
       <div className={`px-20 md:px-36 py-20 gap-10 flex flex-wrap justify-between w-full ${background}`}>
+
          {/* contact form */}
          <div className='w-full md:w-1/2'>
             <h1 className="text-4xl font-semibold w-full bg-gradient-to-r from-indigo-400 to-pink-700 bg-clip-text text-transparent">
@@ -96,7 +97,7 @@ const Page = ({ background }) => {
          </div>
 
          {/* contact info */}
-         <div className='space-y-10'>
+         <div className='space-y-10' >
             <h1 className="text-4xl font-semibold w-full bg-gradient-to-r from-indigo-400 to-pink-700 bg-clip-text text-transparent">Contact Info</h1>
             <div>
                <p className='text-3xl font-semibold'>Let's Talk.</p>

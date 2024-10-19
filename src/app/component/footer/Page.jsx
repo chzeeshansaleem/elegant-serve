@@ -4,46 +4,51 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CiMail } from "react-icons/ci";
 import { FaFacebook, FaPhoneAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import { Montserrat } from "next/font/google";
+const roboto = Montserrat({
+   weight: "400",
+   subsets: ["latin"],
+});
 import Image1 from "../../assets/footer.avif"
 const Page = () => {
 
-   const headingStyle = `text-blue text-2xl uppercase font-medium tracking-[7px] font-gowun`;
+   const headingStyle = `text-blue text-3xl uppercase font-bold tracking-wide font-gowun`;
    const iconsStyle = 'text-blue text-3xl hover:scale-110 duration-700 hover:drop-shadow-blue  shadow-lg cursor-pointer'
 
    const footerContent = {
       "Services": [
          {
-            name: "Design",
-            path: "/"
+            name: "INFORMATION TECHNOLOGY SOLUTION",
+            path: "/pages/service"
          },
          {
-            name: "Project Delivery",
-            path: "/"
+            name: "INFRASTRUCTURE SOLUTION",
+            path: "/pages/service"
          }, {
-            name: "IT Services",
-            path: "/"
+            name: "ELV SOLUTION",
+            path: "/pages/service"
          }, {
-            name: "Structure Cabling",
-            path: "/"
+            name: "MAINTENANCE & SUPPORT SERVICES",
+            path: "/pages/service"
          },
+         {
+            name: "HARDWARE TRADING",
+            path: "/pages/service"
+         }
       ],
 
       "Company": [
          {
             name: "Projects",
-            path: "/"
-         }, {
-            name: "Partners",
-            path: "/"
+            path: "/pages/project"
          },
          {
             name: "About Us",
-            path: "/"
+            path: "/pages/about"
          },
          {
             name: "Contact Us",
-            path: "/"
+            path: "/pages/contact"
          }
       ],
    }
@@ -53,9 +58,9 @@ const Page = () => {
 
 
    return (
-      <div className={`relative w-full bottom-0 flex-grow `}>
-         <div style={{ backgroundImage: `url(${Image1})` }} className={`bg-foreground absolute w-full top-0 p-5 md:px-20 overflow-auto flex-1`}>
-            <div className="flex justify-between w-full flex-wrap space-y-5 border-b-[0.5px] py-10">
+      <div className={`${roboto.className} relative w-full bottom-0 flex-grow `}>
+         <div style={{ backgroundImage: `url(${Image1})` }} className={`bg-foreground justify-around w-full top-0 p-5 md:px-20 overflow-auto flex-1`}>
+            <div className="flex justify-start md:justify-around pl-10 md:pl-0  w-full flex-wrap space-y-5 border-b border-gray-200/20 py-20">
                <div>
                   <Image src={Logo} alt="elegant serve" />
                   <div>
@@ -80,16 +85,16 @@ const Page = () => {
                         <div className="flex flex-col text-white mt-5 gap-3">
                            {
                               value.map((val, index) => (
-                                 <Link className="tracking-widest font-extralight hover:text-blue duration-500 hover:scale-110" href="/" key={index}>{val.name}</Link>
+                                 <Link key={index} className="tracking-widest font-extralight hover:text-blue duration-500 hover:scale-110" href={val.path}>{val.name}</Link>
                               ))
                            }
                         </div>
                      </div>
                   ))
                }
-            
+
             </div>
-            <div className='flex justify-between pt-4'>
+            <div className='flex flex-col md:flex-row gap-5 justify-between  px-20 py-10'>
                <div className='flex gap-7'>
                   <FaFacebook className={iconsStyle} />
                   <FaInstagram className={iconsStyle} />

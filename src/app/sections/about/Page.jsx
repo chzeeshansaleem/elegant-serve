@@ -12,7 +12,7 @@ const Page = () => {
             <p className='h-1 bg-textColor  w-20 text-center -mt-2'></p>
          </div>
          <div className='flex flex-col md:flex-row w-full gap-16 flex-wrap md:flex-nowrap space-y-5 overflow-hidden'>
-            <div className='flex flex-col gap-5 text-xl text-textColor text-justify w-1/2 items-center justify-center'>
+            <div className='flex flex-col gap-5 text-xl text-textColor text-justify w-full md:w-1/2 items-center justify-center'>
                <p className='text-2xl'>Elegant Serve Technologies LLC is a systems integration company based in the UAE. We provides a range of Customized IT solutions and systems enabling our customers to achieve excellence and sustainable competitive edge.  </p>
                <p className='text-2xl'>
                   Elegant Serve Team has extensive experience and expertise in managing projects from design to implementation and customer support. Elegant Serve Technologies is an outcome driven organization, with a passion for results – in terms of values we assist our Clients attain In their quest for excellence.

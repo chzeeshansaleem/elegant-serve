@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'; // Import framer-motion
-import { services } from './constant';
+import { services } from '../../constant/constant';
 import Heading from '../../component/main-heading/Page';
 
 const Page = () => {

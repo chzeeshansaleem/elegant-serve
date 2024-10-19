@@ -22,8 +22,8 @@ const Page = () => {
             <p className='text-6xl font-bold uppercase text-center'>Certifications and partnership</p>
             <div className='flex flex-row justify-center flex-wrap py-20'>
                {
-                  clients.map((client) => (
-                     <div>
+                  clients.map((client, index) => (
+                     <div key={index}>
                         <Image src={client} height={200} width={200} />
                      </div>
                   ))

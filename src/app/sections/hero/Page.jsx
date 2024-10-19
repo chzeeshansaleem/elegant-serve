@@ -7,8 +7,10 @@ import Image2 from "../../assets/image2.avif";
 import Image3 from "../../assets/Call-Center-career.jpg";
 
 import { TypeAnimation } from 'react-type-animation';
+import Link from 'next/link';
 
 const Page = () => {
+
    const images = [Image1, Image2, Image3];
 
    // Array of images
@@ -71,8 +73,8 @@ const Page = () => {
                   />
                </div>
                <div className='flex  flex-col md:flex-row gap-3 md:gap-10 mt-10 z-30'>
-                  <button className='bg-buttonColor hover:drop-shadow-blue text-white z-30 px-8 rounded-md hover:rounded-none duration-700 hover:scale-110 py-3 tracking-widest uppercase text-lg'>Learn More</button>
-                  <button className='text-white rounded-md uppercase tracking-widest border px-8 py-3 border-white hover:bg-white hover:text-black hover:scale-110 duration-700 hover:rounded-none drop-shadow-white  text-lg'>Contact Us</button>
+                  <Link href={'/pages/about'} className='bg-buttonColor hover:drop-shadow-blue text-white z-30 px-8 rounded-md hover:rounded-none duration-700 hover:scale-110 py-3 tracking-widest uppercase text-lg'>Learn More</Link>
+                  <Link href={'/pages/contact'} className='text-white rounded-md uppercase tracking-widest border px-8 py-3 border-white hover:bg-white hover:text-black hover:scale-110 duration-700 hover:rounded-none drop-shadow-white  text-lg'>Contact Us</Link>
                </div>
             </div>
          </div>

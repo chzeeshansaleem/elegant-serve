@@ -45,11 +45,11 @@ const Projects = () => {
             ))}
          </div>
 
-         <div className="w-full max-w-5xl mx-auto columns-1 p-5 pb-10 gap-20 grid grid-cols-1 md:grid-cols-2 flex-wrap">
+         <div className="w-full max-w-5xl mx-auto columns-1 p-5 pb-10 gap-20 grid grid-cols-1 md:grid-cols-2">
             {filteredProjects.map(project => (
                <div
                   key={project.id}
-                  className="relative group w-[300px] h-96"
+                  className="relative group w-full md:w-[300px] h-96"
                >
                   <Image
                      width={300}

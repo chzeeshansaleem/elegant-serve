@@ -52,7 +52,6 @@ const Page = () => {
       };
    }, []);
 
-   console.log(pathname, selectedOption, pathname == selectedOption)
    const menuOptions = [
       { name: 'Home', path: '/' },
       { name: 'Services', path: '/pages/service' },
@@ -80,7 +79,7 @@ const Page = () => {
                   <Link
                      key={index}
                      onClick={() => setSelectedOption(option.path)}
-                     className={`text-xl text-white uppercase font-extralight tracking-widest hover:text-blue duration-300 ${pathname === selectedOption ? 'text-blue' : 'text-white'} ${borderStyle}`}
+                     className={`text-2xl text-white uppercase font-extralight tracking-widest hover:text-blue duration-300 ${pathname === option.path ? '!text-[#05799d] ' : 'text-white'} ${borderStyle}`}
                      href={option.path}
                   >
                      {option.name}

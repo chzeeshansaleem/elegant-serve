@@ -16,7 +16,7 @@ const Page = () => {
             <Marquee speed={50} gradient={false}>
                {clients?.map((client, index) => (
                   <div key={index} className="mx-6">
-                     <Image src={client} alt={`Client ${index + 1}`} width={150} height={100} />
+                     <Image style={{ mixBlendMode: "multiply" }} className="mix-blend-multipy" src={client} alt={`Client ${index + 1}`} width={150} height={100} />
                   </div>
                ))}
             </Marquee>

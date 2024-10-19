@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../globals.css';
 
-import { testimonials } from "./constants";
+import { testimonials } from "../../constant/constant";
 import Heading from "../../component/main-heading/Page";
 
 function Testimonial() {
@@ -26,7 +26,7 @@ function Testimonial() {
                grabCursor={true}
                centeredSlides={true}
                loop={true}
-               slidesPerView={'auto'}
+               slidesPerView={3}
                coverflowEffect={{
                   rotate: 0,
                   stretch: 0,
@@ -44,12 +44,13 @@ function Testimonial() {
                   disableOnInteraction: false, // Keep autoplay even after manual navigation
                }}
                modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-               className="swiper_container"
+               className="swiper_container group w-full"
             >
                {
                   testimonials.map((testimonial, index) => (
-                     <SwiperSlide key={index}>
-                        <div className="flex flex-col justify-center items-center gap-5 p-5 h-full text-foreground font-semibold bg-background rounded-lg">
+                     <SwiperSlide className='border border-gray-500/30 h-auto  rounded-md' key={index}>
+                        <div className="flex flex-col justify-center items-center gap-5 p-5 h-full
+                         text-foreground font-semibold bg-background rounded-lg">
                            <div className='flex items-center gap-5'>
                               <Image
                                  width={50}
@@ -69,7 +70,7 @@ function Testimonial() {
                   ))
                }
 
-               <div className="slider-controler">
+               <div className="slider-controler hidden group-hover:flex bottom-10 relative">
                   <div className="swiper-button-prev slider-arrow bg-background">
                      <TbArrowBadgeLeftFilled className='text-blue' />
                   </div>
